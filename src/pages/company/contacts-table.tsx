@@ -94,7 +94,7 @@ export const CompanyContactsTable = () => {
         // gqlQuery is used to specify the GraphQL query that should be used to fetch the data.
         gqlQuery: COMPANY_CONTACTS_TABLE_QUERY,
       },
-    },
+    }
   );
 
   return (
@@ -103,7 +103,9 @@ export const CompanyContactsTable = () => {
         borderBottom: "1px solid #D9D9D9",
         marginBottom: "1px",
       }}
-      bodyStyle={{ padding: 0 }}
+      styles={{
+        body: { padding: 0 },
+      }}
       title={
         <Space size="middle">
           <TeamOutlined />

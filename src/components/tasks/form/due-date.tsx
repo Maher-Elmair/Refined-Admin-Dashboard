@@ -60,7 +60,7 @@ export const DueDateForm = ({ initialValues, cancelForm }: Props) => {
         justifyContent: "space-between",
       }}
     >
-      <Form {...formProps} initialValues={initialValues}>
+      <Form {...formProps} form={formProps.form} initialValues={initialValues}>
         <Form.Item
           noStyle
           name="dueDate"

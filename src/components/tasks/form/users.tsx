@@ -79,6 +79,7 @@ export const UsersForm = ({ initialValues, cancelForm }: Props) => {
         {...formProps}
         style={{ width: "100%" }}
         initialValues={initialValues}
+        form={formProps.form}
       >
         <Form.Item noStyle name="userIds">
           <Select

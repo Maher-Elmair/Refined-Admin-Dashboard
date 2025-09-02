@@ -43,33 +43,36 @@ const CurrentUser = () => {
     </div>
   );
 
-return (
-  <>
-    <Popover
-      placement="bottomRight"
-      trigger="click"
-      overlayInnerStyle={{ padding: 0 }}
-      overlayStyle={{ zIndex: 999 }}
-      content={content}
-    >
-      <CustomAvatar
-        name={user?.name}
-        src={user?.avatarUrl}
-        size="default"
-        style={{ cursor: "pointer" }}
-      />
-    </Popover>
+  return (
+    <>
+      <Popover
+        placement="bottomRight"
+        trigger="click"
+        styles={{
+          body: {
+            padding: 0,
+            zIndex: 999,
+          },
+        }}
+        content={content}
+      >
+        <CustomAvatar
+          name={user?.name}
+          src={user?.avatarUrl}
+          size="default"
+          style={{ cursor: "pointer" }}
+        />
+      </Popover>
 
-    {user && (
-      <AccountSettings
-        opened={isOpen}
-        setOpened={setIsOpen}
-        userId={user.id}
-      />
-    )}
-  </>
-);
-
+      {user && (
+        <AccountSettings
+          opened={isOpen}
+          setOpened={setIsOpen}
+          userId={user.id}
+        />
+      )}
+    </>
+  );
 };
 
 export default CurrentUser;

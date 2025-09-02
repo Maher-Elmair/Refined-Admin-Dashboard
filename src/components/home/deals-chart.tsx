@@ -14,8 +14,10 @@ const DealsChart = () => {
     resource: "dealStages",
     filters: [
       {
-        field:'title',operator:'in',value:['WON','LOST']
-      }
+        field: "title",
+        operator: "in",
+        value: ["WON", "LOST"],
+      },
     ],
     meta: {
       gqlQuery: DASHBOARD_DEALS_CHART_QUERY,
@@ -59,8 +61,10 @@ const DealsChart = () => {
   return (
     <Card
       style={{ height: "100%" }}
-      headStyle={{ padding: "8px 16px" }}
-      bodyStyle={{ padding: "24px 24px 0 24px" }}
+      styles={{
+        header: { padding: "8px 16px" },
+        body: { padding: "24px 24px 0 24px" },
+      }}
       title={
         <div
           style={{

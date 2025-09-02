@@ -47,7 +47,7 @@ const EditPage = () => {
             saveButtonProps={saveButtonProps}
             breadcrumb={false}
           >
-            <Form {...formProps} layout="vertical">
+            <Form {...formProps} form={formProps.form} layout="vertical">
               <CustomAvatar
                 shape="square"
                 src={avatarUrl}

@@ -134,7 +134,7 @@ export const AccountSettings = ({ opened, setOpened, userId }: Props) => {
         }}
       >
         <Card>
-          <Form {...formProps} layout="vertical">
+          <Form {...formProps} form={formProps.form} layout="vertical">
             <CustomAvatar
               shape="square"
               src={avatarUrl}

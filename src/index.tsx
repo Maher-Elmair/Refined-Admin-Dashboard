@@ -8,6 +8,8 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <div style={{ width: "99vw" }}>
+      <App />
+    </div>{" "}
   </React.StrictMode>
 );

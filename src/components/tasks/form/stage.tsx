@@ -99,6 +99,7 @@ export const StageForm = ({ isLoading }: Props) => {
           alignItems: "center",
         }}
         {...formProps}
+        form={formProps.form}
       >
         <Space size={5}>
           <FlagOutlined />

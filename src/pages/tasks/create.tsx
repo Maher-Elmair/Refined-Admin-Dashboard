@@ -57,6 +57,7 @@ const TasksCreatePage = () => {
     >
       <Form
         {...formProps}
+        form={formProps.form}
         layout="vertical"
         onFinish={(values) => {
           // on finish, call the onFinish method of useModalForm to perform the mutation
