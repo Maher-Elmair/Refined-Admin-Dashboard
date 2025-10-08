@@ -3,13 +3,13 @@ import graphqlDataProvider, {
   liveProvider as graphqlLiveProvider,
 } from "@refinedev/nestjs-query";
 import { createClient } from "graphql-ws";
-import { fetchWrapper } from "./fatch-wrapper";
+import { fetchWrapper } from "./fetch-wrapper";
 
 export const API_BASE_URL = "https://api.crm.refine.dev";
 export const API_URL = `${API_BASE_URL}/graphql`;
-export const WS_URL = "https://api.crm.refine.dev/graphql";
+export const WS_URL = "wss://api.crm.refine.dev/graphql";
 
-export const clint = new GraphQLClient(API_URL, {
+export const client = new GraphQLClient(API_URL, {
   fetch: (url: string, options: RequestInit) => {
     try {
       return fetchWrapper(url, options);
@@ -25,8 +25,9 @@ export const wsClient =
         url: WS_URL,
         connectionParams: () => {
           const accessToken = localStorage.getItem("access_token");
+
           return {
-            header: {
+            headers: {
               Authorization: `Bearer ${accessToken}`,
             },
           };
@@ -34,5 +35,7 @@ export const wsClient =
       })
     : undefined;
 
-export const dataProvider = graphqlDataProvider(clint);
-export const liveProvider = wsClient ? graphqlLiveProvider(wsClient) : undefined;
+export const dataProvider = graphqlDataProvider(client);
+export const liveProvider = wsClient
+  ? graphqlLiveProvider(wsClient)
+  : undefined;
